@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import kosterbild from './koster.jpg'
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <p className="App-intro">
           Life is a mystery, but Koster is a certainty.
         </p>
+        <img src={kosterbild} width='440' />
       </div>
     );
   }
