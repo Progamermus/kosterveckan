@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Style/Login.css';
 import { Link, withRouter, } from 'react-router-dom';
-import Header from './Header'
+import Home from './Home'
 import firebase from 'firebase/app'
 
 import * as routes from '../constants/routes';

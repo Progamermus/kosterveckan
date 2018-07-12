@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Style/App.css';
 import kosterbild from './Resources/koster.jpg';
 
-class Header extends Component {
+class Home extends Component {
   render() {
     return (
       <div className="App">
@@ -18,4 +18,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default Home;
