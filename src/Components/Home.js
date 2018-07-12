@@ -12,7 +12,9 @@ class Home extends Component {
         <p className="App-intro">
           Life is a mystery, but Koster is a certainty.
         </p>
-        <img src={kosterbild} width='440' />
+        <div>
+          <img src={kosterbild} width='440' />
+        </div>
       </div>
     );
   }
