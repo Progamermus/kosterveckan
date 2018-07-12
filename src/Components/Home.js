@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Style/App.css';
 import kosterbild from './Resources/koster.jpg';
+import DiscussionBoard from './DiscussionBoard';
 
 class Home extends Component {
   render() {
@@ -12,6 +13,7 @@ class Home extends Component {
         <p className="App-intro">
           Life is a mystery, but Koster is a certainty.
         </p>
+        <DiscussionBoard />
         <div>
           <img src={kosterbild} width='440' />
         </div>
