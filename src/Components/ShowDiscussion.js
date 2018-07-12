@@ -6,14 +6,23 @@ class ShowDiscussion extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allMesseges: []
+      allMesseges: {},
+      allUsers: []
     };
   }
 
   componentDidMount() {
+    var tempMesseges = []
+    var tempUsers = []
     const messegesRef = firebase.database().ref().child('discussionBoard/messeges');
-    console.log(messegesRef)
-  }
+    messegesRef.once('value', snap => {
+      snap.forEach(child => {
+        tempUsers.push(child.val().username);
+        tempMesseges.push(child.val().messege);
+      })
+    })
+    console.log(tempMesseges)
+    }
 
   render() {
     return (
