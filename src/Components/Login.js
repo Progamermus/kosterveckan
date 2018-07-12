@@ -17,6 +17,7 @@ const LoginPage = ({ history }) =>
     <Login history = {history} />
   </div>
 
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -27,8 +28,8 @@ class Login extends Component {
     };
   }
 
-  onSubmit = event => {
-    console.log("rasmus")
+  onSubmit = () => {
+    this.props.history.push('/home')
   }
 
   inputUser = event => {
@@ -38,6 +39,8 @@ class Login extends Component {
   inputPassword = event => {
     this.setState({password: event.target.value})
   }
+
+
 
   render() {
     return (
