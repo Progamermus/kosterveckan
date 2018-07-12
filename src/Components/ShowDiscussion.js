@@ -5,31 +5,44 @@ import './Style/App.css';
 class ShowDiscussion extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      allMesseges: {},
+      allMesseges: [],
       allUsers: []
     };
   }
 
-  componentDidMount() {
+  getDataFromFirebase() {
     var tempMesseges = []
     var tempUsers = []
     const messegesRef = firebase.database().ref().child('discussionBoard/messeges');
-    messegesRef.once('value', snap => {
+    messegesRef.once('value').then((snap)  => {
       snap.forEach(child => {
         tempUsers.push(child.val().username);
         tempMesseges.push(child.val().messege);
+        })
+        this.setState({
+          allMesseges: tempMesseges,
+          allUsers: tempUsers
+        })
       })
-    })
-    console.log(tempMesseges)
+  }
+
+  componentDidMount() {
+      this.getDataFromFirebase()
     }
 
   render() {
+    this.getDataFromFirebase()
     return (
       <div>
-
+        <div>
+          {this.state.allMesseges.map((item,i) => <li key={i}>{this.state.allMesseges[i]}</li>)}
+        </div>
+        <div>
+          {this.state.allUsers.map((item,i) => <li key={i}>{this.state.allUsers[i]}</li>)}
+        </div>
       </div>
-
     );
   }
 }
