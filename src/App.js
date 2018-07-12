@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Header from './Components/Header'
+import Navigation from './Components/Navigation'
 
 class App extends Component {
   render() {
     return (
-      <Header/>
+      <Navigation/>
     );
   }
 }
