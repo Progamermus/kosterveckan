@@ -13,8 +13,8 @@ class ShowDiscussion extends Component {
   }
 
   getDataFromFirebase() {
-    var tempMesseges = []
-    var tempUsers = []
+    let tempMesseges = []
+    let tempUsers = []
     const messegesRef = firebase.database().ref().child('discussionBoard/messeges');
     messegesRef.once('value').then((snap)  => {
       snap.forEach(child => {
@@ -32,16 +32,16 @@ class ShowDiscussion extends Component {
       this.getDataFromFirebase()
     }
 
+  componentDidUpdate() {
+      this.getDataFromFirebase()
+    }
+
   render() {
-    this.getDataFromFirebase()
     return (
       <div>
-        <div>
-          {this.state.allMesseges.map((item,i) => <li key={i}>{this.state.allMesseges[i]}</li>)}
-        </div>
-        <div>
-          {this.state.allUsers.map((item,i) => <li key={i}>{this.state.allUsers[i]}</li>)}
-        </div>
+        <ul class="discussionBoard">
+            {this.state.allMesseges.map((item,i) => <li key={i}>{this.state.allUsers[i]} : {this.state.allMesseges[i]} </li>)}
+        </ul>
       </div>
     );
   }

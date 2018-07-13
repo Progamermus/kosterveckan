@@ -14,13 +14,12 @@ class DiscussionBoard extends Component {
   }
 
   sendMessegeToDatabase () {
-    if ((this.state.username == "") || (this.state.messege == "")) {
+    if ((this.state.username === "") || (this.state.messege === "")) {
       alert("My penis is too big to fail.")
     } else {
-      var username = this.state.username;
-      var rootRef = firebase.database().ref();
-      var discussionBoardRef = rootRef.child('discussionBoard/messeges');
-      var messegesRef = discussionBoardRef.push();
+      let rootRef = firebase.database().ref();
+      let discussionBoardRef = rootRef.child('discussionBoard/messeges');
+      let messegesRef = discussionBoardRef.push();
       messegesRef.set({
         messege: this.state.messege,
         username: this.state.username

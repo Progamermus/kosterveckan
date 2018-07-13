@@ -1,0 +1,14 @@
+.SignOut {
+  border-radius: 8px;
+  color: white;
+  background-color: blue;
+  opacity: 0.7;
+  border: none;
+  padding: 16px 32px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.SignOut:hover {
+  opacity: 1;
+}
