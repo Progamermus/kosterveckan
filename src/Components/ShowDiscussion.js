@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebase from 'firebase'
 import './Style/App.css';
+import {Row, Col} from 'react-bootstrap'
 
 class ShowDiscussion extends Component {
   constructor(props) {
@@ -38,11 +39,9 @@ class ShowDiscussion extends Component {
 
   render() {
     return (
-      <div>
-        <ul class="discussionBoard">
-            {this.state.allMesseges.map((item,i) => <li key={i}>{this.state.allUsers[i]} : {this.state.allMesseges[i]} </li>)}
-        </ul>
-      </div>
+      <Col>
+        {this.state.allMesseges.map((item,i) => <Row className="show-grid"><Col className="col-sm-2 username">{this.state.allUsers[i]}:</Col><Col className="col-sm-10 messeges">{this.state.allMesseges[i]}</Col> </Row>)}
+      </Col>
     );
   }
 }
