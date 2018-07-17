@@ -40,6 +40,8 @@ class ShowDiscussion extends Component {
     return (
       <div>
         <ul class="discussionBoard">
+          <li>Rasmus: Testpost</li>
+          <li>Elias: Din mamma</li>
             {this.state.allMesseges.map((item,i) => <li key={i}>{this.state.allUsers[i]} : {this.state.allMesseges[i]} </li>)}
         </ul>
       </div>
