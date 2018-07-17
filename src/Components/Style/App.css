@@ -22,10 +22,21 @@
 }
 
 .show-grid {
-  border: 1px solid grey;
+  border: 1px solid lightgrey;
   padding: 10px;
 }
 
-.col-sm-8 {
-  border: 1px solid grey;
+.show-grid.viewMesseges {
+  background-color: lightgrey;
+  height: 75vh;
+  overflow: auto;
+}
+
+.col-sm-10.messeges {
+  text-align: left;
+  overflow: auto;
+}
+.col-sm-2.username {
+  text-align: left;
+  overflow: auto;
 }
