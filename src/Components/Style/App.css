@@ -27,7 +27,7 @@
 }
 
 .show-grid.viewMesseges {
-  background-color: lightgrey;
+  
   height: 75vh;
   overflow: auto;
 }
@@ -37,6 +37,6 @@
   overflow: auto;
 }
 .col-sm-2.username {
-  text-align: left;
+  text-align: right;
   overflow: auto;
 }
