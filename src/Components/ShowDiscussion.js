@@ -40,7 +40,7 @@ class ShowDiscussion extends Component {
   render() {
     return (
       <Col>
-        {this.state.allMesseges.map((item,i) => <Row className="show-grid"><Col className="col-sm-2 username">{this.state.allUsers[i]}:</Col><Col className="col-sm-10 messeges">{this.state.allMesseges[i]}</Col> </Row>)}
+        {this.state.allMesseges.map((item,i) => <Row className="show-grid"><Col className="col-sm-2 username">{this.state.allUsers[i]}:</Col><Col className="col-sm-10 messeges">{this.state.allMesseges[i]}</Col> </Row>).reverse()}
       </Col>
     );
   }
