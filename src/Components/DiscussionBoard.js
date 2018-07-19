@@ -21,9 +21,11 @@ class DiscussionBoard extends Component {
       let rootRef = firebase.database().ref();
       let discussionBoardRef = rootRef.child('discussionBoard/messeges');
       let messegesRef = discussionBoardRef.push();
+      let date = new Date();
       messegesRef.set({
         messege: this.state.messege,
-        username: this.state.username
+        username: this.state.username,
+        date: date.toUTCString()
       });
       this.refs.message.value = '';
     }

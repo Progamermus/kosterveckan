@@ -9,22 +9,26 @@ class ShowDiscussion extends Component {
 
     this.state = {
       allMesseges: [],
-      allUsers: []
+      allUsers: [],
+      allDates: []
     };
   }
 
   getDataFromFirebase() {
-    let tempMesseges = []
-    let tempUsers = []
+    let tempMesseges = [];
+    let tempUsers = [];
+    let tempDates = [];
     const messegesRef = firebase.database().ref().child('discussionBoard/messeges');
     messegesRef.once('value').then((snap)  => {
       snap.forEach(child => {
         tempUsers.push(child.val().username);
         tempMesseges.push(child.val().messege);
+        tempDates.push(Date.parse(child.val().date));
         })
         this.setState({
           allMesseges: tempMesseges,
-          allUsers: tempUsers
+          allUsers: tempUsers,
+          allDates: tempDates
         })
       })
   }
@@ -37,10 +41,17 @@ class ShowDiscussion extends Component {
       this.getDataFromFirebase()
     }
 
+  generateDateDisplay(i) {
+    const date = new Date(this.state.allDates[i]);
+    const dayMonth = date.toLocaleDateString().slice(0, -5);
+    const hourMin = date.toLocaleTimeString().slice(0, -3);
+    return hourMin + ' ' + dayMonth;
+  }
+
   render() {
     return (
       <Col>
-        {this.state.allMesseges.map((item,i) => <Row className="show-grid"><Col className="col-sm-2 username">{this.state.allUsers[i]}:</Col><Col className="col-sm-10 messeges">{this.state.allMesseges[i]}</Col> </Row>).reverse()}
+        {this.state.allMesseges.map((item,i) => <Row className="show-grid"><Col className="col-sm-2 username">{this.state.allUsers[i]}:</Col><Col className="col-sm-9 messeges">{this.state.allMesseges[i]}</Col><Col className="col-sm-1 dates">{this.generateDateDisplay(i)}</Col> </Row>).reverse()}
       </Col>
     );
   }
