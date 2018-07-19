@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import firebase from 'firebase'
+import './Style/App.css';
 import {Row, Col} from 'react-bootstrap'
 
-
-class ShowAnnouncements extends Component {
+class EventDescription extends Component {
   constructor(props) {
     super(props);
 
@@ -17,10 +17,10 @@ class ShowAnnouncements extends Component {
   render() {
     return (
       <Col>
-
+        <h2>Lite information om eventet</h2>
       </Col>
     );
   }
 }
 
-export default ShowAnnouncements;
+export default EventDescription;

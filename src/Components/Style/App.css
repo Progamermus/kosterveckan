@@ -26,8 +26,14 @@
   padding: 10px;
 }
 
-.show-grid.viewMesseges {
+.show-grid.kosterbild {
+  background-image: url('../Resources/koster.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 60vh;
+}
 
+.show-grid.viewMesseges {
   height: 50vh;
   overflow: auto;
 }

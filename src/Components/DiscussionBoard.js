@@ -3,6 +3,7 @@ import firebase from 'firebase'
 import './Style/App.css';
 import ShowDiscussion from './ShowDiscussion'
 import ShowAnnouncements from './ShowAnnouncements'
+import EventDescription from './EventDescription'
 import {Grid, Row, Col} from 'react-bootstrap'
 
 class DiscussionBoard extends Component {
@@ -36,13 +37,19 @@ class DiscussionBoard extends Component {
     return (
       <Grid>
         <Row>
-          <Col className="col-sm-12">
-            <h1>Här kan man väl skriva lite information</h1>
-          </Col>
+          <Row>
+            <Col className="col-sm-12">
+              <EventDescription />
+            </Col>
+          </Row>
         </Row>
-        <Row>
+        <Row className="show-grid">
           <Col className="col-sm-4">
-              <ShowAnnouncements username="admin"/>
+            <Row className="show-grid kosterbild">
+              <Col>
+                <ShowAnnouncements username="admin"/>
+              </Col>
+            </Row>
           </Col>
           <Col className="col-sm-8">
             <Row className="show-grid viewMesseges">
