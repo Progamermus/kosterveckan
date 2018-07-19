@@ -52,7 +52,7 @@ class DiscussionBoard extends Component {
             </Row>
           </Col>
           <Col className="col-sm-8">
-            <Row className="show-grid viewMesseges">
+            <Row className="message-container">
               <Col className="col-sm-12">
                 <ShowDiscussion />
               </Col>
