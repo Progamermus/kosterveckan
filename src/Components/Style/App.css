@@ -30,6 +30,7 @@
   background-image: url('../Resources/koster.jpg');
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   height: 60vh;
 }
 
@@ -40,14 +41,14 @@
 
 .messeges {
   text-align: left;
-  overflow: auto;
+  overflow-wrap: break-word;
 }
 .username {
   text-align: right;
-  overflow: auto;
+  overflow-wrap: break-word;
 }
 
 .dates {
   text-align: right;
-  overflow: visible;
+  overflow: hidden;
 }
