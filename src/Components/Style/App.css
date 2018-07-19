@@ -22,7 +22,6 @@
 }
 
 .show-grid {
-  border: 1px solid lightgrey;
   padding: 10px;
 }
 
@@ -34,17 +33,35 @@
   height: 60vh;
 }
 
-.show-grid.viewMesseges {
+.message-container {
   height: 50vh;
   overflow: auto;
+  border: 2px solid lightgray;
+  background-color: #dedede;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 5px;
+}
+
+.show-grid.all-messeges {
+  border: 2px solid lightgray;
+  background-color: white;
+  border-radius: 30px;
+  margin-bottom: 10px;
 }
 
 .messeges {
   text-align: left;
+  overflow: auto;
+  font-family: "Verdana";
   overflow-wrap: break-word;
 }
+
 .username {
   text-align: right;
+  overflow: auto;
   overflow-wrap: break-word;
 }
 
