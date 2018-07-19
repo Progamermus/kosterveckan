@@ -34,38 +34,43 @@ class DiscussionBoard extends Component {
     return (
       <Grid>
         <Row>
+          <Col className="col-sm-12">
+            <h1>Här kan man väl skriva lite information</h1>
+          </Col>
+        </Row>
+        <Row>
           <Col className="col-sm-4">
               <ShowAnnouncements username="admin"/>
           </Col>
           <Col className="col-sm-8">
-          <Row className="show-grid viewMesseges">
-            <Col className="col-sm-12">
-              <ShowDiscussion />
-            </Col>
-          </Row>
-          <Row className="show-grid">
-            <Col className="col-sm-4">
-              <input
-                class="form-control"
-                placeholder="Choose username..."
-                type="text"
-                onChange={(e) => this.state.username = e.target.value}
-                ref="userName"
-              />
-            </Col>
-            <Col className="col-sm-6">
-              <textarea class="form-control"
-                placeholder="Write message..."
-                onChange={(e) => this.state.messege = e.target.value}
-                ref="message"
-              />
-            </Col>
-            <Col className="col-sm-2">
-              <button onClick={this.sendMessegeToDatabase} class="btn btn-success">
-                Skriv till Koster
-              </button>
-            </Col>
-          </Row>
+            <Row className="show-grid viewMesseges">
+              <Col className="col-sm-12">
+                <ShowDiscussion />
+              </Col>
+            </Row>
+            <Row className="show-grid">
+              <Col className="col-sm-4">
+                <input
+                  class="form-control"
+                  placeholder="Choose username..."
+                  type="text"
+                  onChange={(e) => this.state.username = e.target.value}
+                  ref="userName"
+                />
+              </Col>
+              <Col className="col-sm-6">
+                <textarea class="form-control"
+                  placeholder="Write message..."
+                  onChange={(e) => this.state.messege = e.target.value}
+                  ref="message"
+                />
+              </Col>
+              <Col className="col-sm-2">
+                <button onClick={this.sendMessegeToDatabase} class="btn btn-success">
+                  Skriv till Koster
+                </button>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Grid>
