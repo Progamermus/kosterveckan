@@ -32,11 +32,16 @@
   overflow: auto;
 }
 
-.col-sm-10.messeges {
+.messeges {
   text-align: left;
   overflow: auto;
 }
-.col-sm-2.username {
+.username {
   text-align: right;
   overflow: auto;
+}
+
+.dates {
+  text-align: right;
+  overflow: visible;
 }
