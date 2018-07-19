@@ -25,6 +25,7 @@ class DiscussionBoard extends Component {
         messege: this.state.messege,
         username: this.state.username
       });
+      this.refs.message.value = '';
     }
   }
 
@@ -45,11 +46,14 @@ class DiscussionBoard extends Component {
                 placeholder="Choose username..."
                 type="text"
                 onChange={(e) => this.state.username = e.target.value}
+                ref="userName"
               />
             </Col>
             <Col className="col-sm-6">
               <textarea class="form-control"
+                placeholder="Write message..."
                 onChange={(e) => this.state.messege = e.target.value}
+                ref="message"
               />
             </Col>
             <Col className="col-sm-2">
