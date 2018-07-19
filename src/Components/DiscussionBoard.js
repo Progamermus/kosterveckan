@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import firebase from 'firebase'
 import './Style/App.css';
 import ShowDiscussion from './ShowDiscussion'
+import ShowAnnouncements from './ShowAnnouncements'
 import {Grid, Row, Col} from 'react-bootstrap'
 
 class DiscussionBoard extends Component {
@@ -33,7 +34,10 @@ class DiscussionBoard extends Component {
     return (
       <Grid>
         <Row>
-          <Col className="col-sm-8" xsOffset={4}>
+          <Col className="col-sm-4">
+              <ShowAnnouncements username="admin"/>
+          </Col>
+          <Col className="col-sm-8">
           <Row className="show-grid viewMesseges">
             <Col className="col-sm-12">
               <ShowDiscussion />
