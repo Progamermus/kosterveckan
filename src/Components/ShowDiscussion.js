@@ -52,11 +52,11 @@ class ShowDiscussion extends Component {
     return (
       <Col>
         {this.state.allMesseges.map((item,i) =>
-          <Row className="show-grid">
-            <Col className="col-md-2 username">{this.state.allUsers[i]}:</Col>
-            <Col className="col-lg-9 col-md-8 messeges">{this.state.allMesseges[i]}</Col>
-            <Col className="col-lg-1 col-md-2 dates">{this.generateDateDisplay(i)}</Col>
-          </Row>).reverse()}
+         <Row className="show-grid all-messeges">
+           <Col className="col-md-2 username">{this.state.allUsers[i]}:</Col>
+           <Col className="col-lg-9 col-md-8 messeges">{this.state.allMesseges[i]}</Col>
+           <Col className="col-lg-1 col-md-2 dates">{this.generateDateDisplay(i)}</Col>
+         </Row>).reverse()}
       </Col>
     );
   }
