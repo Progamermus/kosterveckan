@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import firebase from 'firebase'
 import './Style/App.css';
-import {Row, Col} from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap';
 
 class ShowDiscussion extends Component {
   constructor(props) {
@@ -43,8 +43,8 @@ class ShowDiscussion extends Component {
 
   generateDateDisplay(i) {
     const date = new Date(this.state.allDates[i]);
-    const dayMonth = date.toLocaleDateString().slice(0, -5);
-    const hourMin = date.toLocaleTimeString().slice(0, -3);
+    const dayMonth = date.getDate() + '/' + ('0' + date.getMonth()).substr(-2);
+    const hourMin = ('0' + date.getHours()).substr(-2) + ':' + ('0' + date.getMinutes()).substr(-2);
     return hourMin + ' ' + dayMonth;
   }
 

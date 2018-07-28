@@ -1,0 +1,15 @@
+.link {
+  color: inherit;
+}
+
+.link:hover {
+  all: unset;
+}
+
+.link:active {
+  all: unset;
+}
+
+.link:visited {
+  all: unset;
+}
